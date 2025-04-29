@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Header_Footer.master.cs" Inherits="QLBH_TeemoSneaker.Header_Footer" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Teemo Sneaker</title>
+    <link rel="icon" type="image/x-icon" href="~/Image/ic_Logo.png">
+    <link href="~/CSS/Header_Footer.css" rel="stylesheet" />
+    <link href="JavaScript/JavaScript.js" rel="stylesheet" />
+    <link rel="stylesheet" href="Font/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <%--header--%>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <!-- Cột 1: Logo -->
+                <div class="header-left" style="padding-left: 0px;">
+                    <a class="navbar-brand">
+                        <asp:ImageButton ID="logo" runat="server" ImageUrl="~/Image/GiaoDienMaster/Logo.png" Height="50px" href="/Page_Customer/TrangChu.aspx" />
+
+                    </a>
+                    <div class="navbar-label" style="color: #fff; font-size: 16px;">
+                        <!-- Label cho Xin chào và tên người dùng -->
+                        <asp:Label ID="LabelHoTen" runat="server" Text="Xin chào!"></asp:Label>
+                    </div>
+                </div>
+
+                <!-- Cột 2: Menu chính giữa -->
+                <div class="header-center">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="TrangChu.aspx">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="TrangChu.aspx#introduce-content">Giới thiệu</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TrangChu.aspx#boloc-danhsach">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#footer-content">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- Cột 3: Thanh tìm kiếm và giỏ hàng và người dùng -->
+                <div class="header-right d-flex align-items-center" style="padding-right: 20px;">
+                    <asp:ContentPlaceHolder ID="ThanhTimKiem_Header" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="GioHang_Header" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="NguoiDung_Header" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="DangXuat_Header" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </nav>
+        <%--nội dung--%>
+        <div id="content-section">
+            <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+
+    <%--footer--%>
+    <div id="footer-content">
+        <footer class="footer" style="margin-top: 100px;">
+            <div class="footer-column footer-contact">
+                <div class="footer-logo">
+                    <img src="/Image/GiaoDienMaster/Logo.png" alt="Teemo Sneaker" />
+                </div>
+                <p>📍 63/19 Nguyễn Hữu Cầu Phường Tân Định, Quận 1, TPHCM. (đầu hẻm)</p>
+                <p>📞 0339711001</p>
+                <p>📧 TeemoSneaker@gmail.com</p>
+                <div class="payment-methods">
+                    <img src="/Image/momo.png" alt="Momo">
+                    <img src="/Image/zalopay.png" alt="ZaloPay">
+                    <img src="/Image/vnpay.jpg" alt="VnPay">
+                    <img src="/Image/tienmat.png" alt="Tiền mặt">
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>VỀ CHÚNG TÔI</h3>
+                <ul>
+                    <li><a href="TrangChu.aspx">Trang chủ</a></li>
+                    <li><a href="#introduce-content">Giới thiệu</a></li>
+                    <li><a href="#boloc-danhsach">Sản phẩm</a></li>
+                    <li><a href="#footer-content">Liên hệ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>CHÍNH SÁCH</h3>
+                <ul>
+                    <li><a href="#">Mua hàng và thanh toán Online</a></li>
+                    <li><a href="#">Chính sách giao hàng</a></li>
+                    <li><a href="#">Tra cứu hoá đơn điện tử</a></li>
+                    <li><a href="#">Quy định về việc sao lưu dữ liệu</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>THEO DÕI CHÚNG TÔI</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/teemosneaker1989"><i class="ti-facebook"></i></a>
+                    <a href="https://www.instagram.com/teemo_sneaker/"><i class="ti-instagram"></i></a>
+                    <a href="https://teemosneaker.com/#"><i class="ti-youtube"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h3>ĐĂNG KÝ ĐỂ NHẬN TIN</h3>
+                    <input type="email" placeholder="Nhập địa chỉ email">
+                    <button>Gửi</button>
+                </div>
+            </div>
+        </footer>
+
+        <div class="footer-bottom">
+            © Bản quyền thuộc về <strong>Phan Lâm Thanh Như</strong>
+        </div>
+    </div>
+
+
+</body>
+</html>
